@@ -1,0 +1,5 @@
+node_modules
+key.service.*.xml
+*.bak
+/ncc
+/dist/main.js
