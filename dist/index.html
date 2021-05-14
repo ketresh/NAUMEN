@@ -47,10 +47,10 @@
       {{directory[value.ip]}}
     </!--div-->
 
-    <div v-for="(value, name) in state">
+    <!-- <div v-for="(value, name) in state">
       {{ name }}: {{ value }}
       {{ directory[value.peer_ip] }}
-    </div>
+    </div> -->
     <div class="workplace" v-for="(value, name) in state" v-if="value.peer_ip && directory[value.peer_ip]"
       v-bind:style="{ top:directory[value.peer_ip][1]+'px', left:directory[value.peer_ip][0] +'px' }">
       <div class="marker" v-bind:class="value.state">

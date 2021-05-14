@@ -35,11 +35,11 @@ function AddEdit(login, { peer_ip, state }) {
 nccClient.ncc.on('NCCN_Event_PeerRegistered', (err, params) => AddEdit(params.login, { peer_ip: params.peer_ip }));
 
 nccClient.ncc.on('NCC_FullBuddyList_null', (err, params, p) => {
-  console.log(p.NCC.FullBuddyList[0].Endpoint.forEach((endpoint) => { AddEdit(endpoint.$.login, { state: endpoint.State[0].$.value }) }))
+  console.log(p.NCC.FullBuddyList[0].Endpoint.forEach((endpoint) => { AddEdit(endpoint.$.login, { state: endpoint.State?.[0].$.value }) }))
 });
 
 nccClient.ncc.on('NCC_ShortBuddyList_null', (err, params, p) => {
-  console.log(p.NCC.ShortBuddyList[0].Endpoint.forEach((endpoint) => { AddEdit(endpoint.$.login, { state: endpoint.State[0].$.value }) }))
+  console.log(p.NCC.ShortBuddyList[0].Endpoint.forEach((endpoint) => { AddEdit(endpoint.$.login, { state: endpoint.State?.[0].$.value }) }))
 });
 
 nccClient.on('ready', () => {
